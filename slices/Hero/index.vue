@@ -15,16 +15,8 @@
 <template>
     <section :data-slice-type="slice.slice_type" :data-slice-variation="slice.variation">
         <section v-if="slice.variation === 'default'">
-            <PrismicRichText :field="slice.primary.name"/>
             <PrismicRichText :field="slice.primary.title"/>
             
         </section>
     </section>
 </template>
-
-<style>
-    em {
-        color: #6B93CF;
-        font-style: normal;
-    }
-</style>
