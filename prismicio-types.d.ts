@@ -4,7 +4,7 @@ import type * as prismic from "@prismicio/client";
 
 type Simplify<T> = { [KeyType in keyof T]: T[KeyType] };
 
-type PageDocumentDataSlicesSlice = AboutSlice | HeroSlice;
+type PageDocumentDataSlicesSlice = HistorySlice | AboutSlice | HeroSlice;
 
 /**
  * Content for Page documents
@@ -323,6 +323,86 @@ type HeroSliceVariation = HeroSliceDefault | HeroSliceContent | HeroSliceMotto;
  */
 export type HeroSlice = prismic.SharedSlice<"hero", HeroSliceVariation>;
 
+/**
+ * Primary content in *History → Primary*
+ */
+export interface HistorySliceDefaultPrimary {
+  /**
+   * Title field in *History → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: history.primary.title
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  title: prismic.RichTextField;
+}
+
+/**
+ * Primary content in *History → Items*
+ */
+export interface HistorySliceDefaultItem {
+  /**
+   * Date field in *History → Items*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: history.items[].date
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  date: prismic.RichTextField;
+
+  /**
+   * Job field in *History → Items*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: history.items[].job
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  job: prismic.RichTextField;
+
+  /**
+   * Place field in *History → Items*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: history.items[].place
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  place: prismic.RichTextField;
+}
+
+/**
+ * Default variation for History Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type HistorySliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<HistorySliceDefaultPrimary>,
+  Simplify<HistorySliceDefaultItem>
+>;
+
+/**
+ * Slice variation for *History*
+ */
+type HistorySliceVariation = HistorySliceDefault;
+
+/**
+ * History Shared Slice
+ *
+ * - **API ID**: `history`
+ * - **Description**: History
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type HistorySlice = prismic.SharedSlice<
+  "history",
+  HistorySliceVariation
+>;
+
 declare module "@prismicio/client" {
   interface CreateClient {
     (
@@ -350,6 +430,11 @@ declare module "@prismicio/client" {
       HeroSliceDefault,
       HeroSliceContent,
       HeroSliceMotto,
+      HistorySlice,
+      HistorySliceDefaultPrimary,
+      HistorySliceDefaultItem,
+      HistorySliceVariation,
+      HistorySliceDefault,
     };
   }
 }

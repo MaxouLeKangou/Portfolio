@@ -1,0 +1,68 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"title": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "heading2",
+						"content": {
+							"text": "Average"
+						}
+					}
+				]
+			}
+		},
+		"items": [
+			{
+				"__TYPE__": "GroupItemContent",
+				"value": [
+					[
+						"date",
+						{
+							"__TYPE__": "StructuredTextContent",
+							"value": [
+								{
+									"type": "paragraph",
+									"content": {
+										"text": "Et id ullamco cillum veniam sint esse incididunt nulla cupidatat reprehenderit eu do. Mollit voluptate eiusmod dolor laborum adipisicing non qui id veniam voluptate."
+									}
+								}
+							]
+						}
+					],
+					[
+						"job",
+						{
+							"__TYPE__": "StructuredTextContent",
+							"value": [
+								{
+									"type": "paragraph",
+									"content": {
+										"text": "Lorem reprehenderit veniam culpa ullamco dolore enim esse exercitation dolor ea enim eu labore incididunt. Labore ad ad voluptate dolore anim Lorem fugiat cillum exercitation."
+									}
+								}
+							]
+						}
+					],
+					[
+						"place",
+						{
+							"__TYPE__": "StructuredTextContent",
+							"value": [
+								{
+									"type": "paragraph",
+									"content": {
+										"text": "Lorem ullamco qui incididunt fugiat minim magna nulla anim in Lorem esse ex enim. In sunt ea officia sunt ea laboris consequat aute aliquip velit Lorem elit reprehenderit do."
+									}
+								}
+							]
+						}
+					]
+				]
+			}
+		]
+	}
+]
