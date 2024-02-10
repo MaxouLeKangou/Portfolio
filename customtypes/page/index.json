@@ -26,6 +26,9 @@
         "fieldset": "Slice Zone",
         "config": {
           "choices": {
+            "social": {
+              "type": "SharedSlice"
+            },
             "navigation": {
               "type": "SharedSlice"
             },

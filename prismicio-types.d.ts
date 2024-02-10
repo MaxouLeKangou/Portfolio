@@ -5,6 +5,7 @@ import type * as prismic from "@prismicio/client";
 type Simplify<T> = { [KeyType in keyof T]: T[KeyType] };
 
 type PageDocumentDataSlicesSlice =
+  | SocialSlice
   | NavigationSlice
   | FooterSlice
   | HistorySlice
@@ -555,6 +556,58 @@ export type NavigationSlice = prismic.SharedSlice<
   NavigationSliceVariation
 >;
 
+/**
+ * Primary content in *Social → Items*
+ */
+export interface SocialSliceDefaultItem {
+  /**
+   * Link field in *Social → Items*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: social.items[].link
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  link: prismic.LinkField;
+
+  /**
+   * Image field in *Social → Items*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: social.items[].image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image: prismic.ImageField<never>;
+}
+
+/**
+ * Default variation for Social Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type SocialSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Record<string, never>,
+  Simplify<SocialSliceDefaultItem>
+>;
+
+/**
+ * Slice variation for *Social*
+ */
+type SocialSliceVariation = SocialSliceDefault;
+
+/**
+ * Social Shared Slice
+ *
+ * - **API ID**: `social`
+ * - **Description**: Social
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type SocialSlice = prismic.SharedSlice<"social", SocialSliceVariation>;
+
 declare module "@prismicio/client" {
   interface CreateClient {
     (
@@ -597,6 +650,10 @@ declare module "@prismicio/client" {
       NavigationSliceDefaultItem,
       NavigationSliceVariation,
       NavigationSliceDefault,
+      SocialSlice,
+      SocialSliceDefaultItem,
+      SocialSliceVariation,
+      SocialSliceDefault,
     };
   }
 }
