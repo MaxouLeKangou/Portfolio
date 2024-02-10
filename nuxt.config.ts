@@ -1,7 +1,11 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   devtools: { enabled: true },
-  modules: ["@nuxtjs/prismic"],
+  modules: {
+    ["@nuxtjs/prismic"],
+    ['@nuxt/image'],
+  }
+  
 
   css: ['~/assets/css/main.css'],
   postcss: {
@@ -29,5 +33,10 @@ export default defineNuxtConfig({
 
   prismic: {
     endpoint: "portfolio-bessarion"
-  }
+  },
+
+  image: {
+    prismic: {},
+    quality: 70,
+  },
 })
