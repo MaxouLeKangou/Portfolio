@@ -5,6 +5,7 @@ import type * as prismic from "@prismicio/client";
 type Simplify<T> = { [KeyType in keyof T]: T[KeyType] };
 
 type PageDocumentDataSlicesSlice =
+  | NavigationSlice
   | FooterSlice
   | HistorySlice
   | AboutSlice
@@ -494,6 +495,66 @@ export type HistorySlice = prismic.SharedSlice<
   HistorySliceVariation
 >;
 
+/**
+ * Primary content in *Navigation → Primary*
+ */
+export interface NavigationSliceDefaultPrimary {
+  /**
+   * Logo field in *Navigation → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: navigation.primary.logo
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  logo: prismic.ImageField<never>;
+}
+
+/**
+ * Primary content in *Navigation → Items*
+ */
+export interface NavigationSliceDefaultItem {
+  /**
+   * Link field in *Navigation → Items*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: navigation.items[].link
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  link: prismic.LinkField;
+}
+
+/**
+ * Default variation for Navigation Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type NavigationSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<NavigationSliceDefaultPrimary>,
+  Simplify<NavigationSliceDefaultItem>
+>;
+
+/**
+ * Slice variation for *Navigation*
+ */
+type NavigationSliceVariation = NavigationSliceDefault;
+
+/**
+ * Navigation Shared Slice
+ *
+ * - **API ID**: `navigation`
+ * - **Description**: Navigation
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type NavigationSlice = prismic.SharedSlice<
+  "navigation",
+  NavigationSliceVariation
+>;
+
 declare module "@prismicio/client" {
   interface CreateClient {
     (
@@ -531,6 +592,11 @@ declare module "@prismicio/client" {
       HistorySliceDefaultItem,
       HistorySliceVariation,
       HistorySliceDefault,
+      NavigationSlice,
+      NavigationSliceDefaultPrimary,
+      NavigationSliceDefaultItem,
+      NavigationSliceVariation,
+      NavigationSliceDefault,
     };
   }
 }

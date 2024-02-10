@@ -8,4 +8,5 @@ export const components = defineSliceZoneComponents({
   footer: defineAsyncComponent(() => import("./Footer/index.vue")),
   hero: defineAsyncComponent(() => import("./Hero/index.vue")),
   history: defineAsyncComponent(() => import("./History/index.vue")),
+  navigation: defineAsyncComponent(() => import("./Navigation/index.vue")),
 });
