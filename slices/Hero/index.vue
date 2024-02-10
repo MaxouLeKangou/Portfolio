@@ -13,7 +13,7 @@
 </script>
 
 <template>
-    <section :data-slice-type="slice.slice_type" :data-slice-variation="slice.variation">
+    <section class="text-white/75" :data-slice-type="slice.slice_type" :data-slice-variation="slice.variation">
         <section v-if="slice.variation === 'default'">
             <PrismicRichText :field="slice.primary.title"/>
             
