@@ -6,9 +6,12 @@
 
 body {
 	@apply bg-black;
+	@apply font-poppins;
 }
 
 em {
 	@apply text-blue;
 	font-style: normal;
+	display: block;
+	width: 100%;
 }

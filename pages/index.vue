@@ -16,7 +16,7 @@
 <template>
     <!-- <Header/> -->
   
-    <SliceZone class="text-light-100 flex flex-col lg:gap-48" wrapper="main" :components="components" :slices="page?.data.slices ?? []" />
+    <SliceZone wrapper="main" :components="components" :slices="page?.data.slices ?? []" />
 
     <!-- <Footer/> -->
 </template>
