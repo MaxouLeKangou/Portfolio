@@ -176,12 +176,12 @@ export interface FooterSliceDefaultPrimary {
   /**
    * Email field in *Footer → Primary*
    *
-   * - **Field Type**: Rich Text
+   * - **Field Type**: Link
    * - **Placeholder**: *None*
    * - **API ID Path**: footer.primary.email
-   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
    */
-  email: prismic.RichTextField;
+  email: prismic.LinkField;
 
   /**
    * Mention field in *Footer → Primary*
@@ -195,6 +195,31 @@ export interface FooterSliceDefaultPrimary {
 }
 
 /**
+ * Primary content in *Footer → Items*
+ */
+export interface FooterSliceDefaultItem {
+  /**
+   * Link field in *Footer → Items*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: footer.items[].link
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  link: prismic.LinkField;
+
+  /**
+   * Image field in *Footer → Items*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: footer.items[].image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image: prismic.ImageField<never>;
+}
+
+/**
  * Default variation for Footer Slice
  *
  * - **API ID**: `default`
@@ -204,7 +229,7 @@ export interface FooterSliceDefaultPrimary {
 export type FooterSliceDefault = prismic.SharedSliceVariation<
   "default",
   Simplify<FooterSliceDefaultPrimary>,
-  never
+  Simplify<FooterSliceDefaultItem>
 >;
 
 /**
@@ -490,6 +515,7 @@ declare module "@prismicio/client" {
       AboutSliceDefault,
       FooterSlice,
       FooterSliceDefaultPrimary,
+      FooterSliceDefaultItem,
       FooterSliceVariation,
       FooterSliceDefault,
       HeroSlice,
