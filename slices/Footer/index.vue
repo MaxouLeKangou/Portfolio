@@ -15,7 +15,7 @@
 
 <template>
     <section :data-slice-type="slice.slice_type" :data-slice-variation="slice.variation">
-        <div class="grid grid-cols-6 lg:grid-cols-12 pt-24 pb-5 lg:pt-60 lg:pb-10">
+        <footer class="grid grid-cols-6 lg:grid-cols-12 pt-24 pb-5 lg:pt-60 lg:pb-10">
             <div class="flex flex-col col-span-6 lg:col-span-12 text-center">
                 <div class="flex flex-col gap-5 mx-4 lg:mb-20">
                     <PrismicRichText :field="slice.primary.content" class="text-white uppercase tracking-[6px] text-sm lg:text-xl font-semibold"/>
@@ -36,6 +36,6 @@
                     <p>ALL RIGHTS RESERVED</p>
                 </div>
             </div>
-        </div>
+        </footer>
     </section>
 </template>

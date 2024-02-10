@@ -34,11 +34,15 @@
 					[
 						"link",
 						{
-							"__TYPE__": "LinkContent",
-							"value": {
-								"__TYPE__": "ExternalLink",
-								"url": "https://prismic.io"
-							}
+							"__TYPE__": "StructuredTextContent",
+							"value": [
+								{
+									"type": "paragraph",
+									"content": {
+										"text": "Sunt duis minim ad dolore in irure ullamco pariatur qui tempor eiusmod proident tempor. Quis irure reprehenderit et esse incididunt voluptate deserunt velit amet fugiat. Eu est consequat duis proident eiusmod anim quis reprehenderit sunt Lorem qui sint commodo pariatur reprehenderit."
+									}
+								}
+							]
 						}
 					]
 				]

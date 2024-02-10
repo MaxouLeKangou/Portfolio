@@ -517,12 +517,12 @@ export interface NavigationSliceDefaultItem {
   /**
    * Link field in *Navigation → Items*
    *
-   * - **Field Type**: Link
+   * - **Field Type**: Rich Text
    * - **Placeholder**: *None*
    * - **API ID Path**: navigation.items[].link
-   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
-  link: prismic.LinkField;
+  link: prismic.RichTextField;
 }
 
 /**
