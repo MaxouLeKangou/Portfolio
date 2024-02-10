@@ -4,7 +4,11 @@ import type * as prismic from "@prismicio/client";
 
 type Simplify<T> = { [KeyType in keyof T]: T[KeyType] };
 
-type PageDocumentDataSlicesSlice = HistorySlice | AboutSlice | HeroSlice;
+type PageDocumentDataSlicesSlice =
+  | FooterSlice
+  | HistorySlice
+  | AboutSlice
+  | HeroSlice;
 
 /**
  * Content for Page documents
@@ -154,6 +158,68 @@ type AboutSliceVariation = AboutSliceDefault;
  * - **Documentation**: https://prismic.io/docs/slice
  */
 export type AboutSlice = prismic.SharedSlice<"about", AboutSliceVariation>;
+
+/**
+ * Primary content in *Footer → Primary*
+ */
+export interface FooterSliceDefaultPrimary {
+  /**
+   * Content field in *Footer → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: footer.primary.content
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  content: prismic.RichTextField;
+
+  /**
+   * Email field in *Footer → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: footer.primary.email
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  email: prismic.RichTextField;
+
+  /**
+   * Mention field in *Footer → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: footer.primary.mention
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  mention: prismic.RichTextField;
+}
+
+/**
+ * Default variation for Footer Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type FooterSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<FooterSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *Footer*
+ */
+type FooterSliceVariation = FooterSliceDefault;
+
+/**
+ * Footer Shared Slice
+ *
+ * - **API ID**: `footer`
+ * - **Description**: Footer
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type FooterSlice = prismic.SharedSlice<"footer", FooterSliceVariation>;
 
 /**
  * Primary content in *Hero → Primary*
@@ -422,6 +488,10 @@ declare module "@prismicio/client" {
       AboutSliceDefaultItem,
       AboutSliceVariation,
       AboutSliceDefault,
+      FooterSlice,
+      FooterSliceDefaultPrimary,
+      FooterSliceVariation,
+      FooterSliceDefault,
       HeroSlice,
       HeroSliceDefaultPrimary,
       HeroSliceContentPrimary,
