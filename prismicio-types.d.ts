@@ -131,16 +131,6 @@ export type HeroSliceDefault = prismic.SharedSliceVariation<
  */
 export interface HeroSliceContentPrimary {
   /**
-   * name field in *Hero → Primary*
-   *
-   * - **Field Type**: Rich Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: hero.primary.name
-   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
-   */
-  name: prismic.RichTextField;
-
-  /**
    * title field in *Hero → Primary*
    *
    * - **Field Type**: Rich Text
@@ -149,6 +139,16 @@ export interface HeroSliceContentPrimary {
    * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
   title: prismic.RichTextField;
+
+  /**
+   * content field in *Hero → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero.primary.content
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  content: prismic.RichTextField;
 
   /**
    * picture field in *Hero → Primary*
@@ -179,16 +179,6 @@ export type HeroSliceContent = prismic.SharedSliceVariation<
  */
 export interface HeroSliceMottoPrimary {
   /**
-   * name field in *Hero → Primary*
-   *
-   * - **Field Type**: Rich Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: hero.primary.name
-   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
-   */
-  name: prismic.RichTextField;
-
-  /**
    * title field in *Hero → Primary*
    *
    * - **Field Type**: Rich Text
@@ -199,14 +189,24 @@ export interface HeroSliceMottoPrimary {
   title: prismic.RichTextField;
 
   /**
-   * subname field in *Hero → Primary*
+   * content field in *Hero → Primary*
    *
    * - **Field Type**: Rich Text
    * - **Placeholder**: *None*
-   * - **API ID Path**: hero.primary.subname
+   * - **API ID Path**: hero.primary.content
    * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
-  subname: prismic.RichTextField;
+  content: prismic.RichTextField;
+
+  /**
+   * name field in *Hero → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero.primary.name
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  name: prismic.RichTextField;
 
   /**
    * picture field in *Hero → Primary*

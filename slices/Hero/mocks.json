@@ -30,9 +30,9 @@
 				"__TYPE__": "StructuredTextContent",
 				"value": [
 					{
-						"type": "paragraph",
+						"type": "heading1",
 						"content": {
-							"text": "Magna irure anim ex laboris. Esse nostrud adipisicing pariatur consequat laborum excepteur reprehenderit occaecat qui deserunt amet sit duis."
+							"text": "Longer"
 						}
 					}
 				]
@@ -55,28 +55,6 @@
 		"__TYPE__": "SharedSliceContent",
 		"variation": "content",
 		"primary": {
-			"name": {
-				"__TYPE__": "StructuredTextContent",
-				"value": [
-					{
-						"type": "heading2",
-						"content": {
-							"text": "Known"
-						}
-					}
-				]
-			},
-			"title": {
-				"__TYPE__": "StructuredTextContent",
-				"value": [
-					{
-						"type": "paragraph",
-						"content": {
-							"text": "Mollit enim dolore commodo ad aliqua quis sunt nisi esse eu anim eiusmod deserunt exercitation labore. Laborum irure exercitation velit eu nulla elit esse et occaecat reprehenderit ex commodo id aliquip mollit. Tempor sunt nulla id mollit."
-						}
-					}
-				]
-			},
 			"picture": {
 				"origin": {
 					"id": "main",
@@ -99,6 +77,28 @@
 				"alt": null,
 				"__TYPE__": "ImageContent",
 				"thumbnails": {}
+			},
+			"content": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Anim eiusmod et et id proident. Sint mollit nisi aute fugiat ullamco dolor ex voluptate qui consectetur."
+						}
+					}
+				]
+			},
+			"title": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "heading2",
+						"content": {
+							"text": "Badly"
+						}
+					}
+				]
 			}
 		},
 		"items": [
@@ -112,17 +112,6 @@
 		"__TYPE__": "SharedSliceContent",
 		"variation": "motto",
 		"primary": {
-			"title": {
-				"__TYPE__": "StructuredTextContent",
-				"value": [
-					{
-						"type": "paragraph",
-						"content": {
-							"text": "Sint anim commodo in dolor nulla occaecat elit ea consequat proident ex sint nulla ipsum. Anim reprehenderit occaecat ex occaecat aliqua eiusmod. Exercitation proident tempor et officia."
-						}
-					}
-				]
-			},
 			"picture": {
 				"origin": {
 					"id": "main",
@@ -146,13 +135,24 @@
 				"__TYPE__": "ImageContent",
 				"thumbnails": {}
 			},
-			"subname": {
+			"content": {
 				"__TYPE__": "StructuredTextContent",
 				"value": [
 					{
 						"type": "paragraph",
 						"content": {
-							"text": "Sint occaecat ad ut non incididunt nisi. Incididunt laboris aute anim ipsum culpa."
+							"text": "Occaecat id minim duis ullamco."
+						}
+					}
+				]
+			},
+			"title": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "heading2",
+						"content": {
+							"text": "Complete"
 						}
 					}
 				]
@@ -161,9 +161,9 @@
 				"__TYPE__": "StructuredTextContent",
 				"value": [
 					{
-						"type": "heading2",
+						"type": "paragraph",
 						"content": {
-							"text": "Rocket"
+							"text": "Ex tempor irure id fugiat quis adipisicing officia dolore eiusmod aute commodo voluptate enim ullamco commodo."
 						}
 					}
 				]

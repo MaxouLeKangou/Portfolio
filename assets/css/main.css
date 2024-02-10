@@ -12,6 +12,8 @@ body {
 em {
 	@apply text-blue;
 	font-style: normal;
-	display: block;
-	width: 100%;
 }
+
+::-webkit-scrollbar {
+	width: 10px;
+  }
