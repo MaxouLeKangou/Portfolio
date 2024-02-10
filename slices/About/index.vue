@@ -15,7 +15,7 @@
 
 <template>
     <section :data-slice-type="slice.slice_type" :data-slice-variation="slice.variation">
-        <div class="text-white/75 py-24 lg:py-60 grid grid-cols-6 lg:grid-cols-12 gap-3 lg:gap-5">
+        <div class="text-white/75 bg-gray py-24 lg:py-60 grid grid-cols-6 lg:grid-cols-12 gap-3 lg:gap-5">
             <div class="flex flex-col gap-24 lg:gap-60 mx-4 sm:mx-12 col-span-6 lg:col-span-8 lg:col-start-3 lg:mx-0">
                 <div class="flex flex-col gap-5">
                     <PrismicRichText :field="slice.primary.title" class="text-white uppercase tracking-[6px] text-sm sm:text-lg lg:text-xl font-semibold"/>
