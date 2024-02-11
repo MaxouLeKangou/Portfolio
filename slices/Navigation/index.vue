@@ -45,7 +45,9 @@ onMounted(() => {
 <template>
   <section :data-slice-type="slice.slice_type" :data-slice-variation="slice.variation">
     <header class="fixed z-20 top-10 left-4 right-4 sm:left-12 sm:right-12 lg:left-24 lg:right-24 flex justify-between">
-      <PrismicImage :field="slice.primary.logo" class="rounded-full w-9 h-9 sm:w-11 sm:h-11 lg:w-16 lg:h-16"/>
+      <NuxtLink to="/" class="w-9 h-9 sm:w-11 sm:h-11 lg:w-16 lg:h-16">
+          <PrismicImage :field="slice.primary.logo" class="rounded-full "/>
+      </NuxtLink>
       <ul class="flex flex-col gap-3 text-right">
         <li v-for="(item, index) in slice.items" :key="index" @click="scrollToSection(formatSectionId(item.link))">
           <button :class="{'text-white': formatSectionId(item.link) === currentSection, 'text-white/50': formatSectionId(item.link) !== currentSection}" class="font-bold text-sm sm:text-base lg:text-xl cursor-pointer transition-colors duration-500">
