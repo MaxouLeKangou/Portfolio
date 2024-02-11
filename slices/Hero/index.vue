@@ -14,10 +14,10 @@
 
 <template>
     <section class="text-white/75" :data-slice-type="slice.slice_type" :data-slice-variation="slice.variation">
-        <section v-if="slice.variation === 'default'">
+        <section id="about" v-if="slice.variation === 'default'">
             <div class="relative uppercase flex items-center justify-center h-screen">
                 <div class="absolute w-full h-full top-0 right-0 bottom-0 lg:w-[50%]">
-                    <PrismicImage :field="slice.primary.picture" class="w-full h-full object-cover grayscale"/>
+                    <NuxtImg provider="prismic" :src="slice.primary.picture.url || ''" alt="picture of Maxime LEGRAND" class="w-full h-full object-cover grayscale"/>
                     <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-black/65 to-black/65 lg:from-black lg:to-black/50"></div>
                 </div>
                 <!-- Conteneur du texte -->
@@ -30,10 +30,10 @@
             </div>
         </section>
 
-        <section v-if="slice.variation === 'content'">
+        <section id="work" v-if="slice.variation === 'content'">
             <div class="relative flex items-center justify-center h-screen">
                 <div class="absolute w-full h-full top-0 left-0 bottom-0 lg:w-[50%]">
-                    <PrismicImage :field="slice.primary.picture" class="w-full h-full object-cover grayscale"/>
+                    <NuxtImg provider="prismic" :src="slice.primary.picture.url || ''" alt="picture of Maxime LEGRAND" class="w-full h-full object-cover grayscale"/>
                     <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-black/65 to-black/65 lg:from-black/50 lg:to-black"></div>
                 </div>
                 <!-- Conteneur du texte -->
@@ -46,10 +46,10 @@
             </div>
         </section>
 
-        <section v-if="slice.variation === 'motto'">
+        <section id="contact" v-if="slice.variation === 'motto'">
             <div class="relative flex items-center justify-center h-screen">
                 <div class="absolute w-full h-full">
-                    <PrismicImage :field="slice.primary.picture" class="w-full h-full object-cover grayscale"/>
+                    <NuxtImg provider="prismic" :src="slice.primary.picture.url || ''" alt="picture of Maxime LEGRAND" class="w-full h-full object-cover grayscale"/>
                     <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-black/65 to-black/65"></div>
                 </div>
                 <!-- Conteneur du texte -->

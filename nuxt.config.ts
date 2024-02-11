@@ -1,10 +1,10 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   devtools: { enabled: true },
-  modules: {
-    ["@nuxtjs/prismic"],
-    ['@nuxt/image'],
-  }
+  modules: [
+    '@nuxtjs/prismic',
+    '@nuxt/image'
+  ],
   
 
   css: ['~/assets/css/main.css'],
@@ -37,6 +37,6 @@ export default defineNuxtConfig({
 
   image: {
     prismic: {},
-    quality: 70,
+    quality: 10,
   },
 })
