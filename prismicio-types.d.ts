@@ -5,6 +5,7 @@ import type * as prismic from "@prismicio/client";
 type Simplify<T> = { [KeyType in keyof T]: T[KeyType] };
 
 type PageDocumentDataSlicesSlice =
+  | WorksSlice
   | SocialSlice
   | NavigationSlice
   | FooterSlice
@@ -724,6 +725,58 @@ type SocialSliceVariation = SocialSliceDefault;
  */
 export type SocialSlice = prismic.SharedSlice<"social", SocialSliceVariation>;
 
+/**
+ * Primary content in *Works → Primary*
+ */
+export interface WorksSliceDefaultPrimary {
+  /**
+   * Title field in *Works → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: works.primary.title
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  title: prismic.RichTextField;
+
+  /**
+   * Link field in *Works → Primary*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: works.primary.link
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  link: prismic.LinkField;
+}
+
+/**
+ * Default variation for Works Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type WorksSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<WorksSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *Works*
+ */
+type WorksSliceVariation = WorksSliceDefault;
+
+/**
+ * Works Shared Slice
+ *
+ * - **API ID**: `works`
+ * - **Description**: Works
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type WorksSlice = prismic.SharedSlice<"works", WorksSliceVariation>;
+
 declare module "@prismicio/client" {
   interface CreateClient {
     (
@@ -773,6 +826,10 @@ declare module "@prismicio/client" {
       SocialSliceDefaultItem,
       SocialSliceVariation,
       SocialSliceDefault,
+      WorksSlice,
+      WorksSliceDefaultPrimary,
+      WorksSliceVariation,
+      WorksSliceDefault,
     };
   }
 }
