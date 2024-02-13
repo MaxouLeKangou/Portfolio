@@ -48,7 +48,7 @@
           </div>
           <div class="flex justify-center">
             <NuxtLink to="/works" class="max-w-max bg-black rounded-full uppercase text-sm flex gap-3 py-4 px-6 lg:gap-5 lg:py-5 lg:px-8 lg:text-xl lg:items-center">
-                <div class="w-5 h-5 lg:w-10 lg:h-10 bg-blue rounded-full"></div><p>VIEW ALL PROJECTS</p>
+                <div class="w-5 h-5 lg:w-8 lg:h-8 bg-blue rounded-full"></div><p>VIEW ALL PROJECTS</p>
             </NuxtLink>
           </div>
       </div>
