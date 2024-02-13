@@ -5,15 +5,16 @@
 @tailwind utilities;
 
 body {
-	@apply bg-black;
-	@apply font-poppins;
-}
-
-em {
-	@apply text-blue;
-	font-style: normal;
+    @apply bg-black;
+    @apply font-poppins;
+    scrollbar-width: none;
 }
 
 ::-webkit-scrollbar {
-	width: 10px;
-  }
+    display: none;
+}
+
+em {
+    @apply text-blue;
+    font-style: normal;
+}
