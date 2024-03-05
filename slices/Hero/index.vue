@@ -20,7 +20,6 @@
                     <NuxtImg provider="prismic" :src="slice.primary.picture.url || ''" alt="picture of Maxime LEGRAND" class="w-full h-full object-cover grayscale"/>
                     <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-black/65 to-black/65 lg:from-black lg:to-black/50"></div>
                 </div>
-                <!-- Conteneur du texte -->
                 <div class="absolute z-10 w-full h-full place-items-center grid grid-cols-6 gap-3 lg:grid-cols-12 lg:gap-5">
                     <div class="text-center flex flex-col col-span-2 col-start-3 lg:col-span-4 lg:col-start-5 gap-5 lg:gap-10">
                         <PrismicRichText :field="slice.primary.name" class="tracking-[6px] text-sm lg:text-xl font-semibold"/>
@@ -36,7 +35,6 @@
                     <NuxtImg provider="prismic" :src="slice.primary.picture.url || ''" alt="picture of Maxime LEGRAND" class="w-full h-full object-cover grayscale"/>
                     <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-black/65 to-black/65 lg:from-black/50 lg:to-black"></div>
                 </div>
-                <!-- Conteneur du texte -->
                 <div class="absolute z-10 w-full h-full place-items-center grid grid-cols-6 gap-3 lg:grid-cols-12 lg:gap-5">
                     <div class="flex flex-col gap-5 mx-4 sm:mx-12 col-span-6 lg:col-span-8 lg:col-start-3 lg:mx-0">
                         <PrismicRichText :field="slice.primary.title" class="text-white uppercase tracking-[6px] text-sm sm:text-lg lg:text-xl font-semibold"/>
@@ -52,7 +50,6 @@
                     <NuxtImg provider="prismic" :src="slice.primary.picture.url || ''" alt="picture of Maxime LEGRAND" class="w-full h-full object-cover grayscale"/>
                     <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-black/65 to-black/65"></div>
                 </div>
-                <!-- Conteneur du texte -->
                 <div class="absolute z-10 w-full h-full place-items-center grid grid-cols-6 gap-3 lg:grid-cols-12 lg:gap-5">
                     <div class="text-center flex flex-col gap-5 mx-4 sm:mx-12 col-span-6 lg:col-span-10 lg:col-start-2 lg:mx-0">
                         <PrismicRichText :field="slice.primary.title" class="text-white uppercase tracking-[6px] text-sm sm:text-lg lg:text-xl font-semibold"/>

@@ -1,6 +1,5 @@
 <script setup lang="ts">
     import { type Content } from "@prismicio/client";
-    import { asText } from '@prismicio/helpers';
 
     // The array passed to `getSliceComponentProps` is purely optional.
     // Consider it as a visual hint for you when templating your slice.
@@ -28,9 +27,9 @@
     <section :data-slice-type="slice.slice_type" :data-slice-variation="slice.variation">
       <div class="text-white bg-gray py-24 lg:py-60 flex flex-col gap-14 lg:gap-24">
           <div class="grid grid-cols-6 lg:grid-cols-12 gap-3 lg:gap-5">
-            <PrismicRichText :field="slice.primary.title" class="uppercase tracking-[6px] mb-5 lg:mb-0 flex col-span-6 lg:col-span-1 lg:col-start-2 lg:items-center lg:rotate-[270deg] justify-center text-sm text-center sm:text-lg lg:text-xl font-semibold whitespace-nowrap"/>
-            <div class="flex flex-col gap-5 mx-4 sm:mx-12 col-span-6 lg:col-span-8 lg:col-start-3 lg:mx-0">
-              <section v-for="work in documents" :key="work.uid" class="relative">
+            <PrismicRichText :field="slice.primary.title" class="uppercase sticky top-10 lg:top-24 tracking-[6px] mb-5 lg:mb-10 flex col-span-6 lg:col-span-12 justify-center text-sm text-center sm:text-lg lg:text-xl font-semibold whitespace-nowrap"/>
+            <div class="flex flex-col gap-40 mx-4 sm:mx-12 col-span-6 lg:col-span-8 lg:col-start-3 lg:mx-0">
+              <section v-for="work in documents" :key="work.uid" class="sticky top-24 lg:top-44">
                 <NuxtLink :to="`/work/${work.uid}`" class="block h-[70vh]">
                   <div class="absolute z-10 flex flex-col gap-3 bottom-10 left-5 sm:left-10 sm:gap-4 lg:flex-row lg:items-end lg:justify-between lg:right-10 2xl:left-20 2xl:bottom-20 2xl:right-20">
                     <PrismicRichText :field="work.data.name" class="font-anton text-5xl sm:text-6xl 2xl:text-8xl"/>
@@ -54,3 +53,4 @@
       </div>
     </section>
 </template>
+

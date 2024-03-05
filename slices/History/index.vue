@@ -1,20 +1,58 @@
 <script setup lang="ts">
-    import { type Content } from "@prismicio/client";
+import { type Content } from "@prismicio/client";
 
-    // The array passed to `getSliceComponentProps` is purely optional.
-    // Consider it as a visual hint for you when templating your slice.
-    defineProps(
-        getSliceComponentProps<Content.HistorySlice>([
-            "slice",
-            "index",
-            "slices",
-            "context",
-        ]),
-    );
+// Définition des props du composant
+defineProps(
+    getSliceComponentProps<Content.HistorySlice>([
+        "slice",
+        "index",
+        "slices",
+        "context",
+    ]),
+);
+
+const sectionRef = ref(null);
+let observer;
+
+const observeElement = (elementRef) => {
+  observer = new IntersectionObserver(
+    ([entry]) => {
+      const opacity = Math.max(0.2, entry.intersectionRatio); // Assure un minimum de 50% d'opacité
+      entry.target.style.opacity = opacity;
+    },
+    {
+      root: null, // Utilise le viewport comme racine
+      threshold: buildThresholdList(), // Déclencheur à différents seuils pour un effet progressif
+    }
+  );
+
+  if (elementRef.value) {
+    observer.observe(elementRef.value);
+  }
+};
+
+const buildThresholdList = () => {
+  let thresholds = [];
+  for (let i = 0; i <= 1.0; i += 0.01) {
+    thresholds.push(i);
+  }
+  return thresholds;
+};
+
+onMounted(() => {
+  observeElement(sectionRef);
+});
+
+onUnmounted(() => {
+  if (observer) {
+    observer.disconnect();
+  }
+});
 </script>
 
 <template>
-    <section :data-slice-type="slice.slice_type" :data-slice-variation="slice.variation">
+    <!-- Utilisation de `sectionRef` pour observer la section entière -->
+    <section ref="sectionRef" :data-slice-type="slice.slice_type" :data-slice-variation="slice.variation">
         <div class="text-white/75 bg-gray py-24 lg:py-60 grid grid-cols-6 lg:grid-cols-12 gap-3 lg:gap-5">
             <PrismicRichText :field="slice.primary.title" class="text-white uppercase tracking-[6px] text-sm sm:text-lg lg:text-xl font-semibold mx-4 sm:mx-12 lg:col-start-3 lg:mx-0"/>
             <div class="flex flex-col gap-5 col-span-6 lg:col-span-12">
