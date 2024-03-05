@@ -18,7 +18,7 @@ const observeElement = (elementRef) => {
   observer = new IntersectionObserver(
     ([entry]) => {
       const opacity = Math.max(0.2, entry.intersectionRatio); // Assure un minimum de 50% d'opacité
-      entry.target.style.opacity = opacity;
+      entry.target.style.opacity = opacity*1.5;
     },
     {
       root: null, // Utilise le viewport comme racine
