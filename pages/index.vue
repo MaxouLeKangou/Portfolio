@@ -14,9 +14,6 @@
 
 
 <template>
-    <!-- <Header/> -->
-  
+    <customCursor />
     <SliceZone wrapper="main" :components="components" :slices="page?.data.slices ?? []" />
-
-    <!-- <Footer/> -->
 </template>

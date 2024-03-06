@@ -48,7 +48,7 @@ onMounted(() => {
       <NuxtLink to="/" class="w-9 h-9 sm:w-11 sm:h-11 lg:w-16 lg:h-16">
           <PrismicImage :field="slice.primary.logo" class="rounded-full "/>
       </NuxtLink>
-      <ul class="flex flex-col gap-3 text-right">
+      <ul class="nav-menu flex flex-col gap-3 text-right">
         <li v-for="(item, index) in slice.items" :key="index" @click="scrollToSection(formatSectionId(item.link))">
           <button :class="{'text-white': formatSectionId(item.link) === currentSection, 'text-white/50': formatSectionId(item.link) !== currentSection}" class="font-bold text-sm sm:text-base lg:text-xl cursor-pointer transition-colors duration-500">
             {{ asText(item.link) }}

@@ -15,7 +15,7 @@
 
 <template>
     <section :data-slice-type="slice.slice_type" :data-slice-variation="slice.variation">
-        <div class="hidden lg:block fixed z-20 bottom-24 left-24">
+        <div class="hidden lg:block fixed z-20 bottom-10 left-24">
             <ul class="flex flex-col gap-3">
                 <li v-for="(item, index) in slice.items" :key="index" class="flex">
                     <PrismicLink :field="item.link" class="">
