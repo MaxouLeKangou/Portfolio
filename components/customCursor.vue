@@ -3,28 +3,35 @@ export default {
     data() {
         return {
             outerPosition: { x: -50, y: -50 },
-            targetPosition: { x: 0, y: 0 }, // Initialiser avec des valeurs par défaut
+            targetPosition: { x: 0, y: 0 },
             isHovering: false,
-            cursorSize: { width: 36, height: 36 }, // Taille par défaut du curseur
-            cursorSizeLarge: { width: 56, height: 56 }, // Taille du curseur lors du survol
+            cursorSize: { width: 36, height: 36 },
+            cursorSizeLarge: { width: 56, height: 56 },
+            isTouchDevice: false,
         };
     },
     mounted() {
-        // Mise à jour de la position cible après que le composant soit monté
-        this.targetPosition.x = window.innerWidth / 2;
-        this.targetPosition.y = window.innerHeight / 2;
+        // Détecter si l'appareil est tactile
+        this.isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
         
-        this.moveCursor();
-        window.addEventListener('mousemove', this.updateTargetPosition);
-        window.addEventListener('scroll', this.checkHoverDuringScroll, true);
-
-        this.addOrRemoveEventListeners('add');
+        // S'exécute seulement si ce n'est pas un appareil tactile
+        if (!this.isTouchDevice) {
+            this.targetPosition.x = window.innerWidth / 2;
+            this.targetPosition.y = window.innerHeight / 2;
+            
+            this.moveCursor();
+            window.addEventListener('mousemove', this.updateTargetPosition);
+            window.addEventListener('scroll', this.checkHoverDuringScroll, true);
+            this.addOrRemoveEventListeners('add');
+        }
     },
     beforeUnmount() {
-        window.removeEventListener('mousemove', this.updateTargetPosition);
-        window.removeEventListener('scroll', this.checkHoverDuringScroll, true);
-
-        this.addOrRemoveEventListeners('remove');
+        // S'exécute seulement si ce n'est pas un appareil tactile
+        if (!this.isTouchDevice) {
+            window.removeEventListener('mousemove', this.updateTargetPosition);
+            window.removeEventListener('scroll', this.checkHoverDuringScroll, true);
+            this.addOrRemoveEventListeners('remove');
+        }
     },
     methods: {
         updateTargetPosition(e) {

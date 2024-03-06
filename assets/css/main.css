@@ -12,6 +12,18 @@
     user-select: none;
 }
 
+@media (hover: hover) and (pointer: fine) {
+    .cursor-container {
+        display: block;
+    }
+}
+
+@media (hover: none) and (pointer: coarse) {
+    .cursor-container {
+        display: none;
+    }
+}
+
 body {
     @apply bg-black;
     @apply font-poppins;
