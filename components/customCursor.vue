@@ -3,13 +3,17 @@ export default {
     data() {
         return {
             outerPosition: { x: -50, y: -50 },
-            targetPosition: { x: window.innerWidth / 2, y: window.innerHeight / 2 }, // Centrer initialement le curseur
+            targetPosition: { x: 0, y: 0 }, // Initialiser avec des valeurs par défaut
             isHovering: false,
             cursorSize: { width: 36, height: 36 }, // Taille par défaut du curseur
             cursorSizeLarge: { width: 56, height: 56 }, // Taille du curseur lors du survol
         };
     },
     mounted() {
+        // Mise à jour de la position cible après que le composant soit monté
+        this.targetPosition.x = window.innerWidth / 2;
+        this.targetPosition.y = window.innerHeight / 2;
+        
         this.moveCursor();
         window.addEventListener('mousemove', this.updateTargetPosition);
         window.addEventListener('scroll', this.checkHoverDuringScroll, true);
@@ -24,7 +28,6 @@ export default {
     },
     methods: {
         updateTargetPosition(e) {
-            // Ajuster la position cible en fonction de la taille actuelle du curseur
             const cursorHalfWidth = this.isHovering ? this.cursorSizeLarge.width / 2 : this.cursorSize.width / 2;
             const cursorHalfHeight = this.isHovering ? this.cursorSizeLarge.height / 2 : this.cursorSize.height / 2;
             this.targetPosition.x = e.clientX - cursorHalfWidth;
@@ -47,8 +50,14 @@ export default {
             this.checkHoverStatus();
         },
         checkHoverStatus() {
-            const elementUnderCursor = document.elementFromPoint(this.targetPosition.x + this.cursorSize.width / 2, this.targetPosition.y + this.cursorSize.height / 2);
-            this.isHovering = elementUnderCursor && (elementUnderCursor.matches('a, button, .nav-menu') || elementUnderCursor.closest('a, button, .nav-menu'));
+            const elementUnderCursor = document.elementFromPoint(
+              this.targetPosition.x + this.cursorSize.width / 2, 
+              this.targetPosition.y + this.cursorSize.height / 2
+            );
+            this.isHovering = elementUnderCursor && (
+              elementUnderCursor.matches('a, button, .nav-menu') || 
+              elementUnderCursor.closest('a, button, .nav-menu')
+            );
         },
         addOrRemoveEventListeners(action) {
             const method = action === 'add' ? 'addEventListener' : 'removeEventListener';
@@ -60,6 +69,7 @@ export default {
     },
 };
 </script>
+
 
 
 
