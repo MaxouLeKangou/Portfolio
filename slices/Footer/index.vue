@@ -19,7 +19,7 @@
             <div class="flex flex-col col-span-6 lg:col-span-12 text-center">
                 <div class="flex flex-col gap-5 mx-4 lg:mb-20">
                     <PrismicRichText :field="slice.primary.content" class="text-white uppercase tracking-[6px] text-sm lg:text-xl font-semibold"/>
-                    <NuxtLink :to="slice.primary.email.url" class="text-blue font-anton uppercase text-2xl sm:text-4xl lg:text-6xl">
+                    <NuxtLink :to="slice.primary.email.url" class="text-blue font-anton uppercase text-xl sm:text-4xl lg:text-6xl">
                         {{ slice.primary.email.url.replace('mailto:', '') }}
                     </NuxtLink>
                 </div>
