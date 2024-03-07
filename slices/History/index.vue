@@ -12,13 +12,13 @@ defineProps(
 );
 
 const sectionRef = ref(null);
-let observer;
+let observer: IntersectionObserver;
 
-const observeElement = (elementRef) => {
+const observeElement = (elementRef: globalThis.Ref<null>) => {
   observer = new IntersectionObserver(
     ([entry]) => {
       const opacity = Math.max(0.2, entry.intersectionRatio); // Assure un minimum de 50% d'opacité
-      entry.target.style.opacity = opacity*1.5;
+      (entry.target as HTMLElement).style.opacity = `${opacity * 1.5}`;
     },
     {
       root: null, // Utilise le viewport comme racine
@@ -52,7 +52,7 @@ onUnmounted(() => {
 
 <template>
     <!-- Utilisation de `sectionRef` pour observer la section entière -->
-    <section ref="sectionRef" :data-slice-type="slice.slice_type" :data-slice-variation="slice.variation">
+    <section id="work" ref="sectionRef" :data-slice-type="slice.slice_type" :data-slice-variation="slice.variation">
         <div class="text-white/75 bg-gray py-24 lg:py-60 grid grid-cols-6 lg:grid-cols-12 gap-3 lg:gap-5">
             <PrismicRichText :field="slice.primary.title" class="text-white uppercase tracking-[6px] text-sm sm:text-lg lg:text-xl font-semibold mx-4 sm:mx-12 lg:col-start-3 lg:mx-0"/>
             <div class="flex flex-col gap-5 col-span-6 lg:col-span-12">

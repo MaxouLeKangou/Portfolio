@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { defineProps, onMounted, ref, watch } from 'vue';
 import { type Content } from "@prismicio/client";
 import { asText } from '@prismicio/helpers';
 import { PrismicImage } from '@prismicio/vue';
