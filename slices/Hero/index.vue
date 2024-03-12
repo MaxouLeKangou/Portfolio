@@ -12,35 +12,34 @@
     );
 
     onMounted(() => {
-  if (process.client) {
-    // GSAP importe dynamiquement pour s'assurer qu'il est utilisé uniquement côté client
-    import('gsap').then((gsapModule) => {
-      const gsap = gsapModule.gsap; // GSAP core
-      import('gsap/ScrollTrigger').then((ScrollTriggerModule) => {
-        gsap.registerPlugin(ScrollTriggerModule.ScrollTrigger);
+        if (process.client) {
+            import('gsap').then((gsapModule) => {
+                const gsap = gsapModule.gsap;
+                import('gsap/ScrollTrigger').then((ScrollTriggerModule) => {
+                    gsap.registerPlugin(ScrollTriggerModule.ScrollTrigger);
 
-        // Assurez-vous que vos sélecteurs correspondent à vos éléments HTML
-        gsap.to(".jscontent", {
-          yPercent: -40,
-          ease: "none",
-          scrollTrigger: {
-            trigger: ".jssection",
-            scrub: true
-          }, 
-        });
+                    gsap.to(".jscontent", {
+                        yPercent: -40,
+                        ease: "none",
+                        scrollTrigger: {
+                            trigger: ".jssection",
+                            scrub: true
+                        }, 
+                    });
 
-        gsap.to(".jsimage", {
-          yPercent: 0,
-          ease: "none",
-          scrollTrigger: {
-            trigger: ".jssection",
-            scrub: true
-          }, 
-        });
-      });
+                    gsap.to(".jsimage", {
+                        yPercent: 0,
+                        ease: "none",
+                        scrollTrigger: {
+                            trigger: ".jssection",
+                            scrub: true
+                        }, 
+                    });
+                });
+            });
+        }
     });
-  }
-});
+    
 </script>
 
 <template>

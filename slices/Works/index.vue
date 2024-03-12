@@ -44,11 +44,41 @@
           
           </div>
           <div class="flex justify-center">
-            <NuxtLink to="works" class="max-w-max bg-black rounded-full uppercase text-sm flex gap-3 py-4 px-6 lg:gap-5 lg:py-5 lg:px-8 lg:text-xl lg:items-center">
-                <div class="w-5 h-5 lg:w-8 lg:h-8 bg-blue rounded-full"></div><p>VIEW ALL PROJECTS</p>
+            <NuxtLink to="works" class="link-container bg-black rounded-full uppercase text-sm flex items-center py-4 px-6 gap-3 lg:gap-5 lg:py-5 lg:px-8 lg:text-xl">
+              <div class="circle w-5 h-5 lg:w-8 lg:h-8 bg-blue rounded-full"></div>
+              <p class="text-transparent hover:text-white transition-colors duration-300">VIEW ALL PROJECTS</p>
             </NuxtLink>
           </div>
+
+
       </div>
     </section>
 </template>
+
+<style>
+.link-container {
+  position: relative;
+  overflow: hidden;
+  transition: color 0.3s;
+  cursor: pointer;
+}
+
+.link-container p {
+  position: relative;
+  transition: color 0.3s;
+  z-index: 2;
+}
+
+.circle {
+  transition: transform 0.5s ease-in-out, background-color 0.3s;
+  z-index: 1;
+  border-radius: 50%;
+}
+
+.link-container:hover .circle {
+  transform: translateY(-50%) scale(20);
+  @apply bg-blue
+}
+
+</style>
 

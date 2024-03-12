@@ -37,4 +37,9 @@ body {
 em {
     @apply text-blue;
     font-style: normal;
+    transition: letter-spacing 0.3s ease;
+}
+  
+em:hover {
+    letter-spacing: 6px;
 }
