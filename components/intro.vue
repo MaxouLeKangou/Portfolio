@@ -4,9 +4,7 @@
 
     const greetings = [
         "Bonjour", "Hello", "Hola", "Hallo", "Ciao", "こんにちは", 
-        "안녕하세요", "你好", "Olá", "Привет", "Merhaba", "Salam", 
-        "नमस्ते", "Hej", "Hei", "Tere", "Sveiki", "Labas", 
-        "Sziasztok", "Ahoj", "Sawubona"
+        "안녕하세요", "你好", "Olá", "Привет"
     ];
 
     const currentGreeting = ref(greetings[0]);
@@ -31,7 +29,7 @@
                 } else {
                     currentGreeting.value = greetings[greetingIndex];
                 }
-            }, 200);
+            }, 300);
 
             onUnmounted(() => {
                 clearInterval(intervalId);
