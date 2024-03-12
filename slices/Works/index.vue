@@ -39,7 +39,6 @@
                   <PrismicImage :field="work.data.image" class="w-full h-full rounded-3xl object-cover"/>
                 </NuxtLink>
               </section>
-          
             </div>
           
           </div>

@@ -10,18 +10,10 @@ const prismic = usePrismic()
         title: prismic.asText(page.value?.data.title)
     })
 
-const showIntro = ref(true)
-
-function handleAnimationDone() {
-    showIntro.value = false
-}
 </script>
 
 <template>
-    <!-- <intro v-if="showIntro" @animationDone="handleAnimationDone" /> -->
+    <intro />
     <CustomCursor />
     <SliceZone :components="components" :slices="page?.data.slices ?? []" />
-    <main v-show="!showIntro">
-        
-    </main>
 </template>
