@@ -6,6 +6,9 @@ export default defineNuxtConfig({
     '@nuxt/image'
   ],
   
+  plugins: [
+    { src: '~/plugins/gsap.js', mode: 'client' }
+  ],
 
   css: ['~/assets/css/main.css'],
   postcss: {

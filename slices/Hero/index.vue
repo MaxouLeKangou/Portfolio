@@ -10,6 +10,37 @@
             "context",
         ]),
     );
+
+    onMounted(() => {
+  if (process.client) {
+    // GSAP importe dynamiquement pour s'assurer qu'il est utilisé uniquement côté client
+    import('gsap').then((gsapModule) => {
+      const gsap = gsapModule.gsap; // GSAP core
+      import('gsap/ScrollTrigger').then((ScrollTriggerModule) => {
+        gsap.registerPlugin(ScrollTriggerModule.ScrollTrigger);
+
+        // Assurez-vous que vos sélecteurs correspondent à vos éléments HTML
+        gsap.to(".jscontent", {
+          yPercent: -40,
+          ease: "none",
+          scrollTrigger: {
+            trigger: ".jssection",
+            scrub: true
+          }, 
+        });
+
+        gsap.to(".jsimage", {
+          yPercent: 0,
+          ease: "none",
+          scrollTrigger: {
+            trigger: ".jssection",
+            scrub: true
+          }, 
+        });
+      });
+    });
+  }
+});
 </script>
 
 <template>
@@ -44,14 +75,14 @@
             </div>
         </section>
 
-        <section id="contact" v-if="slice.variation === 'motto'">
+        <section id="contact" class="jssection" v-if="slice.variation === 'motto'">
             <div class="relative flex items-center justify-center h-screen">
-                <div class="absolute w-full h-full">
+                <div class="jsimage w-full h-full z-[-1]">
                     <NuxtImg provider="prismic" :src="slice.primary.picture.url || ''" alt="picture of Maxime LEGRAND" class="w-full h-full object-cover grayscale"/>
                     <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-black/65 to-black/65"></div>
                 </div>
                 <div class="absolute z-10 w-full h-full place-items-center grid grid-cols-6 gap-3 lg:grid-cols-12 lg:gap-5">
-                    <div class="text-center flex flex-col gap-5 mx-4 sm:mx-12 col-span-6 lg:col-span-8 lg:col-start-3 lg:mx-0">
+                    <div class="jscontent pt-72 text-center flex flex-col gap-5 mx-4 sm:mx-12 col-span-6 lg:col-span-8 lg:col-start-3 lg:mx-0">
                         <PrismicRichText :field="slice.primary.title" class="text-white uppercase tracking-[6px] text-sm sm:text-lg lg:text-xl font-semibold"/>
                         <div class="flex flex-col gap-10 lg:gap-20">
                             <PrismicRichText :field="slice.primary.content" class="text-7xl sm:text-8xl lg:text-[120px] font-bold "/>
@@ -61,6 +92,8 @@
                 </div>
             </div>
         </section>
+
+        
 
     </section>
   </template>
