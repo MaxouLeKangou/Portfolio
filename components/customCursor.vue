@@ -12,25 +12,25 @@ export default {
     },
     mounted() {
         this.isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
-        window.addEventListener('mousemove', this.handleMouseMove);
-        this.addOrRemoveEventListeners('add');
-
+        
         if (!this.isTouchDevice) {
+            this.targetPosition.x = window.innerWidth / 2;
+            this.targetPosition.y = window.innerHeight / 2;
+            
             this.moveCursor();
+            window.addEventListener('mousemove', this.updateTargetPosition);
+            window.addEventListener('scroll', this.checkHoverDuringScroll, true);
+            this.addOrRemoveEventListeners('add');
         }
     },
     beforeUnmount() {
-        window.removeEventListener('mousemove', this.handleMouseMove);
-        this.addOrRemoveEventListeners('remove');
+        if (!this.isTouchDevice) {
+            window.removeEventListener('mousemove', this.updateTargetPosition);
+            window.removeEventListener('scroll', this.checkHoverDuringScroll, true);
+            this.addOrRemoveEventListeners('remove');
+        }
     },
     methods: {
-        handleMouseMove(e) {
-            if (this.isTouchDevice) {
-                this.isTouchDevice = false;
-                this.moveCursor();
-            }
-            this.updateTargetPosition(e);
-        },
         updateTargetPosition(e) {
             const cursorHalfWidth = this.isHovering ? this.cursorSizeLarge.width / 2 : this.cursorSize.width / 2;
             const cursorHalfHeight = this.isHovering ? this.cursorSizeLarge.height / 2 : this.cursorSize.height / 2;
@@ -42,9 +42,7 @@ export default {
             const ease = 0.1;
             this.outerPosition.x += (this.targetPosition.x - this.outerPosition.x) * ease;
             this.outerPosition.y += (this.targetPosition.y - this.outerPosition.y) * ease;
-            if (!this.isTouchDevice) {
-                requestAnimationFrame(this.moveCursor.bind(this));
-            }
+            requestAnimationFrame(this.moveCursor.bind(this));
         },
         onLinkHover() {
             this.isHovering = true;
@@ -53,16 +51,16 @@ export default {
             this.isHovering = false;
         },
         checkHoverDuringScroll() {
-            this.checkHoverStatus(); 
+            this.checkHoverStatus();
         },
         checkHoverStatus() {
             const elementUnderCursor = document.elementFromPoint(
-                this.targetPosition.x + this.cursorSize.width / 2, 
-                this.targetPosition.y + this.cursorSize.height / 2
+              this.targetPosition.x + this.cursorSize.width / 2, 
+              this.targetPosition.y + this.cursorSize.height / 2
             );
             this.isHovering = elementUnderCursor && (
-                elementUnderCursor.matches('a, button, .nav-menu') || 
-                elementUnderCursor.closest('a, button, .nav-menu')
+              elementUnderCursor.matches('a, button, .nav-menu') || 
+              elementUnderCursor.closest('a, button, .nav-menu')
             );
         },
         addOrRemoveEventListeners(action) {
@@ -122,4 +120,3 @@ export default {
         border: 2px solid #6B93CF;
     }
 </style>
-  
