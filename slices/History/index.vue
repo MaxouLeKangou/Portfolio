@@ -57,7 +57,7 @@ onUnmounted(() => {
             <PrismicRichText :field="slice.primary.title" class="text-white uppercase tracking-[6px] text-sm sm:text-lg lg:text-xl font-semibold mx-4 sm:mx-12 lg:col-start-3 lg:mx-0"/>
             <div class="flex flex-col gap-5 col-span-6 lg:col-span-12">
                 <ul v-for="(item, index) in slice.items" :key="index" class="flex flex-col">
-                    <li class="border-b-[1px] border-white/25 py-12 sm:py-14 lg:py-16">
+                    <li class="border-b-[1px] border-white/15 py-12 sm:py-14 lg:py-16">
                         <div class="mx-4 sm:mx-12 grid grid-cols-6 lg:grid-cols-12 lg:mx-0">
                             <em class="uppercase text-xl sm:text-4xl lg:text-6xl font-bold lg:col-start-3">
                               <PrismicRichText :field="item.date"/>
