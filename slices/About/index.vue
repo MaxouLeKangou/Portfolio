@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import { PrismicRichText } from '@prismicio/vue';
-
 const props = defineProps({
     slice: Object,
     index: Number,
@@ -53,12 +51,10 @@ function buildThresholdList() {
       <div class="grid grid-cols-6 gap-3">
         <div class="flex flex-col gap-5 col-span-6 lg:col-start-4">
           <PrismicRichText :field="slice.primary.subtitle" class="text-white uppercase tracking-[6px] text-sm sm:text-lg lg:text-xl font-semibold"/>
-          <div class="grid grid-cols-2 gap-4">
-            <ul v-for="(item, index) in slice.items" :key="index" class="flex flex-col">
-              <li class="flex gap-4 text-sm sm:text-lg lg:text-xl">
-                <span>-</span><PrismicRichText :field="item.text"/>
-              </li>
-            </ul>
+          <div class="grid grid-cols-2 gap-4 lg:gap-5">
+            <div v-for="(item, index) in slice.items" :key="index" class="flex flex-col">
+              <NuxtLink :to="item.link.url" class="flex items-center gap-3 lg:gap-4 text-sm sm:text-lg lg:text-xl"><PrismicImage :field="item.icon" class="w-6 sm:w-7 lg:w-8"/><PrismicRichText :field="item.text"/></NuxtLink>
+            </div>
           </div>
         </div>
       </div>

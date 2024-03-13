@@ -241,6 +241,16 @@ export interface AboutSliceDefaultPrimary {
  */
 export interface AboutSliceDefaultItem {
   /**
+   * Icon field in *About → Items*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: about.items[].icon
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  icon: prismic.ImageField<never>;
+
+  /**
    * Text field in *About → Items*
    *
    * - **Field Type**: Rich Text
@@ -249,6 +259,16 @@ export interface AboutSliceDefaultItem {
    * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
   text: prismic.RichTextField;
+
+  /**
+   * Link field in *About → Items*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: about.items[].link
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  link: prismic.LinkField;
 }
 
 /**
