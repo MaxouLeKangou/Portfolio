@@ -19,6 +19,7 @@ export default {
             gray: '#191919',
             white: '#FFFFFF',
             blue: '#6B93CF',
+            purple: '#A76BCF',
         },
     },
     plugins: [],
