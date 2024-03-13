@@ -19,11 +19,9 @@
             <div class="flex flex-col col-span-6 lg:col-span-12 text-center">
                 <div class="flex flex-col gap-5 mx-4 lg:mb-20">
                     <PrismicRichText :field="slice.primary.content" class="text-white uppercase tracking-[6px] text-xs lg:text-xl font-semibold"/>
-                    <em class="font-anton uppercase text-lg sm:text-4xl lg:text-6xl">
-                        <NuxtLink :to="slice.primary.email.url">
-                            {{ slice.primary.email.url.replace('mailto:', '') }}
-                        </NuxtLink>
-                    </em>
+                    <NuxtLink :to="slice.primary.email.url" class="text-blue font-anton uppercase text-lg sm:text-4xl lg:text-6xl">
+                        {{ slice.primary.email.url.replace('mailto:', '') }}
+                    </NuxtLink>
                 </div>
 
                 <ul class="flex justify-center gap-4 my-10 lg:hidden">
