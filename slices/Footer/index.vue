@@ -18,10 +18,12 @@
         <footer class="grid grid-cols-6 lg:grid-cols-12 pt-24 pb-5 lg:pt-36 lg:pb-10">
             <div class="flex flex-col col-span-6 lg:col-span-12 text-center">
                 <div class="flex flex-col gap-5 mx-4 lg:mb-20">
-                    <PrismicRichText :field="slice.primary.content" class="text-white uppercase tracking-[6px] text-sm lg:text-xl font-semibold"/>
-                    <NuxtLink :to="slice.primary.email.url" class="text-blue font-anton uppercase text-xl sm:text-4xl lg:text-6xl">
-                        {{ slice.primary.email.url.replace('mailto:', '') }}
-                    </NuxtLink>
+                    <PrismicRichText :field="slice.primary.content" class="text-white uppercase tracking-[6px] text-xs lg:text-xl font-semibold"/>
+                    <em class="font-anton uppercase text-lg sm:text-4xl lg:text-6xl">
+                        <NuxtLink :to="slice.primary.email.url">
+                            {{ slice.primary.email.url.replace('mailto:', '') }}
+                        </NuxtLink>
+                    </em>
                 </div>
 
                 <ul class="flex justify-center gap-4 my-10 lg:hidden">
