@@ -16,7 +16,7 @@ defineProps(
 <template>
   <section :data-slice-type="slice.slice_type" :data-slice-variation="slice.variation">
     <div class="text-white grid grid-cols-6 lg:grid-cols-12 py-24 lg:py-0 gap-8 lg:gap-5 mx-4 sm:mx-12 lg:mx-0 sm:text-lg lg:text-xl lg:h-screen lg:items-center">
-      <PrismicRichText :field="slice.primary.name" class="text-blue text-4xl sm:text-5xl lg:text-7xl lg:w-[100%] text-center font-semibold col-start-1 col-span-6 lg:col-start-3 lg:text-left lg:col-span-3" />
+      <PrismicRichText :field="slice.primary.name" class="text-blue uppercase text-4xl sm:text-5xl lg:text-7xl lg:w-[100%] text-center font-semibold col-start-1 col-span-6 lg:col-start-3 lg:text-left lg:col-span-3" />
       <div class="flex flex-col gap-8 col-start-1 col-span-6 lg:col-start-7 lg:col-span-4 lg:pl-4">
         <PrismicRichText :field="slice.primary.content" />
         <NuxtLink :to="slice.primary.link.url" class="text-purple">
