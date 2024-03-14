@@ -8,7 +8,7 @@
     );
 
     useHead({
-        title: page.value?.data.meta_title,
+        title: prismic.asText(page.value?.data.title),
     });
 </script>
 
