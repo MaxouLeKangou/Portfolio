@@ -858,6 +858,16 @@ export interface TitleSliceDefaultPrimary {
    * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
    */
   link: prismic.LinkField;
+
+  /**
+   * LinkContent field in *Title → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: title.primary.linkcontent
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  linkcontent: prismic.RichTextField;
 }
 
 /**

@@ -13,5 +13,6 @@
 </script>
 
 <template>
+    <CustomCursor />
     <SliceZone wrapper="main" :slices="page?.data.slices ?? []" :components="components"/>
 </template>

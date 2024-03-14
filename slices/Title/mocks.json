@@ -7,9 +7,9 @@
 				"__TYPE__": "StructuredTextContent",
 				"value": [
 					{
-						"type": "paragraph",
+						"type": "heading1",
 						"content": {
-							"text": "Reprehenderit aliquip ad do."
+							"text": "Similar"
 						}
 					}
 				]
@@ -20,7 +20,7 @@
 					{
 						"type": "paragraph",
 						"content": {
-							"text": "Elit dolor irure est quis commodo aute ex quis."
+							"text": "Esse proident est ad tempor fugiat consequat deserunt exercitation irure dolore fugiat magna. Proident elit nulla consequat id quis irure et ipsum duis officia proident deserunt elit elit. Excepteur officia qui non mollit."
 						}
 					}
 				]
@@ -31,6 +31,17 @@
 					"__TYPE__": "ExternalLink",
 					"url": "https://slicemachine.dev"
 				}
+			},
+			"linkcontent": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Nostrud laboris adipisicing incididunt deserunt velit reprehenderit qui minim minim et Lorem laboris commodo proident."
+						}
+					}
+				]
 			}
 		},
 		"items": []
