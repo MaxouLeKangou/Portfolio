@@ -1,0 +1,54 @@
+{
+  "id": "image",
+  "type": "SharedSlice",
+  "name": "Image",
+  "description": "Image",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "picture": {
+          "type": "Image",
+          "config": {
+            "label": "Picture",
+            "constraint": {},
+            "thumbnails": []
+          }
+        }
+      },
+      "items": {}
+    },
+    {
+      "id": "2Pictures",
+      "name": "2 pictures",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "picture_1": {
+          "type": "Image",
+          "config": {
+            "label": "Picture 1",
+            "constraint": {},
+            "thumbnails": []
+          }
+        },
+        "picture_2": {
+          "type": "Image",
+          "config": {
+            "label": "Picture 2",
+            "constraint": {},
+            "thumbnails": []
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}
