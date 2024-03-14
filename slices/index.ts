@@ -11,6 +11,7 @@ export const components = defineSliceZoneComponents({
   image: defineAsyncComponent(() => import("./Image/index.vue")),
   navigation: defineAsyncComponent(() => import("./Navigation/index.vue")),
   social: defineAsyncComponent(() => import("./Social/index.vue")),
+  text: defineAsyncComponent(() => import("./Text/index.vue")),
   title: defineAsyncComponent(() => import("./Title/index.vue")),
   works: defineAsyncComponent(() => import("./Works/index.vue")),
 });
