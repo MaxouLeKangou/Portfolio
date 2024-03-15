@@ -21,7 +21,7 @@ defineProps(
 
     <section v-if="slice.variation === '2Pictures'" class="grid grid-cols-6 lg:grid-cols-12 mx-4 sm:mx-12 lg:mx-0 py-5 lg:py-20">
       <PrismicImage :field="slice.primary.picture_1" class="col-start-1 col-span-3 lg:col-start-3 lg:col-span-4 object-cover h-full" />
-      <PrismicImage :field="slice.primary.picture_2" class="col-start-4 col-span-6 lg:col-start-7 lg:col-span-4 object-cover h-full" />
+      <PrismicImage :field="slice.primary.picture_2" class="col-start-4 col-span-3 lg:col-start-7 lg:col-span-4 object-cover h-full" />
     </section>
   </section>
 </template>
