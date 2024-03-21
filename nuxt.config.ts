@@ -3,7 +3,8 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   modules: [
     '@nuxtjs/prismic',
-    '@nuxt/image'
+    '@nuxt/image',
+    '@nuxtjs/sitemap',
   ],
   
   plugins: [
@@ -42,5 +43,9 @@ export default defineNuxtConfig({
   image: {
     prismic: {},
     quality: 10,
+  },
+
+  site: {
+    url: 'https://portfolio.bessarion.fr',
   },
 })
