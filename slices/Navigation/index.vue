@@ -17,7 +17,7 @@ const scrollToSection = (sectionId: string) => {
         section.scrollIntoView({ behavior: 'smooth' });
         setTimeout(() => {
             observingSections.value = true;
-        }, 100); // Ajustez ce délai au besoin
+        }, 300); // Ajustez ce délai au besoin
     }
 };
 
