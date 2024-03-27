@@ -44,7 +44,7 @@
           </div>
           <div class="flex justify-center">
             <NuxtLink to="works" class="link-container bg-black rounded-full uppercase text-sm flex items-center py-4 px-6 gap-3 lg:gap-5 lg:py-5 lg:px-8 lg:text-xl">
-              <div class="circle w-5 h-5 lg:w-8 lg:h-8 bg-purple rounded-full"></div>
+              <div class="circle w-5 h-5 lg:w-8 lg:h-8 bg-yellow rounded-full"></div>
               <p class="text-transparent hover:text-white transition-colors duration-300">VIEW ALL PROJECTS</p>
             </NuxtLink>
           </div>
@@ -76,7 +76,7 @@
 
 .link-container:hover .circle {
   transform: translateY(-50%) scale(20);
-  @apply bg-purple;
+  @apply bg-yellow;
 }
 
 .link-container:hover p {

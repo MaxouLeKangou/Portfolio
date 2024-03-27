@@ -19,7 +19,7 @@ defineProps(
       <PrismicRichText :field="slice.primary.name" class="text-blue uppercase text-4xl sm:text-5xl lg:text-7xl lg:w-[100%] text-center font-semibold col-start-1 col-span-6 lg:col-start-3 lg:text-left lg:col-span-3" />
       <div class="flex flex-col gap-8 col-start-1 col-span-6 lg:col-start-7 lg:col-span-4 lg:pl-4">
         <PrismicRichText :field="slice.primary.content" />
-        <NuxtLink :to="slice.primary.link.url" class="text-purple">
+        <NuxtLink :to="slice.primary.link.url" class="text-yellow">
           <PrismicRichText :field="slice.primary.linkcontent"/>
         </NuxtLink>
       </div>
